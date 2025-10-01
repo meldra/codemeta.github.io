@@ -4,7 +4,7 @@ This page lists some existing tools to help with CodeMeta files
 
 ## File Generation
 
- Some of the early tools still need a little updating to use the latest version of the codemeta context.
+Some of the early tools still need a little updating to use the latest version of the codemeta context.
 
 {.table .table-striped}
 
@@ -30,7 +30,7 @@ existing codemeta.json files automatically.
 
 {.table .table-striped}
 
-Name | Description |  Authors | Language | Codemeta Version
+Name | Description |  Authors | Language | CodeMeta Version
 -----|-------------|----------|----------|--------------------
 [Fidgit](https://github.com/arfon/fidgit): | An ungodly union of GitHub and Figshare | Arfon Smith, Kaitlin Thaney, Mark Hahnel | Ruby | 0.1.0
 [Software Heritage](https://docs.softwareheritage.org/devel/swh-indexer/metadata-workflow.html#adding-support-for-additional-ecosystem-specific-metadata)|The metadata indexers | SWH team | Python | 2.0

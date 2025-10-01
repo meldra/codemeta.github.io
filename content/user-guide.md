@@ -17,7 +17,7 @@ Here is an example of a basic `codemeta.json` that you can put at the root of a 
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "@type": "SoftwareSourceCode",
     "name": "CodemetaR",
-    "description": "Codemeta defines a 'JSON-LD' format for describing software metadata. This package provides utilities to generate, parse, and modify codemeta.jsonld files automatically for R packages.",
+    "description": "CodeMeta defines a 'JSON-LD' format for describing software metadata. This package provides utilities to generate, parse, and modify codemeta.jsonld files automatically for R packages.",
     "license": "https://spdx.org/licenses/GPL-3.0",
     "identifier": "http://dx.doi.org/10.5281/zenodo.XXXX"
 }
