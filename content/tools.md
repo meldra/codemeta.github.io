@@ -11,7 +11,7 @@ Some of the early tools still need a little updating to use the latest version o
 {.table .table-striped}
 
 Name | Language | CodeMeta versions | Maintainers | Description
------|----------|-------------------|------------|--------------
+-----|----------|-------------------|-------------|------------
 [AutoCodemeta Generator](https://w3id.org/autocodemeta) | JavaScript | 3.0.0 | [dgarijo](http://github.com/dgarijo) | Optimized version of CodeMeta Generator that automatically creates a CodeMeta file from a given repository
 [Bolognese](https://github.com/datacite/bolognese) | Ruby | 1.0.0 | [mfenner](https://github.com/mfenner) | Primarily a tool for conversion between formats provided by DataCite, including CodeMeta and schema.org
 [cff-converter](https://github.com/citation-file-format/cff-converter-python) | Python | 2.0.0 | [jspaaks](https://github.com/jspaaksh) | Convert `CITATION.cff` files to codemeta
@@ -34,7 +34,7 @@ existing codemeta.json files automatically.
 {.table .table-striped}
 
 Name | Language | CodeMeta versions | Maintainers | Description
------|-------------|----------|----------|--------------------
+-----|----------|-------------------|-------------|------------
 [Fidgit](https://github.com/arfon/fidgit) | Ruby | 0.1.0 | Arfon Smith, Kaitlin Thaney, Mark Hahnel | An ungodly union of GitHub and Figshare
 [Software Heritage](https://docs.softwareheritage.org/devel/swh-indexer/metadata-workflow.html#adding-support-for-additional-ecosystem-specific-metadata) | Python | 2.0 | SWH team | The metadata indexers
 
