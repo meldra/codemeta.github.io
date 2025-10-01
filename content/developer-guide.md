@@ -1,5 +1,6 @@
-
-# CodeMeta Developer Guide
+---
+title: CodeMeta Developer Guide
+---
 
 This guide is intended for software developers who require detailed information about the CodeMeta project's
 usage of JavaScript Object Notation for Linked Data ([JSON-LD](http://json-ld.org/)) for defining a
@@ -28,7 +29,7 @@ The JSON-LD [Best Practices guide](http://json-ld.org/spec/latest/json-ld-api-be
 > Linked Data is a way to create a network of standards-based machine interpretable data
 > across different documents and Web sites. It allows an application to start at one piece of Linked
 > Data, and follow embedded links to other pieces of Linked Data that are hosted on different
-> sites across the Web."
+> sites across the Web.
 
 JSON-LD is a W3C standard, specified at https://www.w3.org/TR/json-ld/
 
@@ -43,11 +44,11 @@ A CodeMeta software description, or *CodeMeta document*, uses the JSON names con
 Because the CodeMeta document refers to the context file, the mapping between the local JSON names and the
 IRIs is always known, thereby giving the local names universal context.
 
-An example usage of the CodeMeta document is for the author of research software package to generate a CodeMeta Document when the software package is published to a repository. The  CodeMeta Document can be used to aid in any repository ingest processing. The  CodeMeta Document can be made available in the repository with the software package as it may contain additional metadata that was not used by the repository. In addition this file may be used in other transactions involving the software package after the package has been downloaded from the repository.
+An example usage of the CodeMeta document is for the author of research software package to generate a CodeMeta Document when the software package is published to a repository. The CodeMeta Document can be used to aid in any repository ingest processing. The CodeMeta Document can be made available in the repository with the software package as it may contain additional metadata that was not used by the repository. In addition this file may be used in other transactions involving the software package after the package has been downloaded from the repository.
 
-The producer of an  CodeMeta Document, i.e. the creators of the software, must use the JSON names from the CodeMeta context file. The consumer of the  CodeMeta Document can use these same JSON names from the  CodeMeta Document for any necessary processing tasks.
+The producer of an CodeMeta Document, i.e. the creators of the software, must use the JSON names from the CodeMeta context file. The consumer of the CodeMeta Document can use these same JSON names from the CodeMeta Document for any necessary processing tasks.
 
-As an alternative to using the producer supplied JSON names, the consumer can use the [JSON-LD API](https://www.w3.org/TR/json-ld-api/) to translate the JSON names to their own local JSON names that may be in use by their local processing scripts. This is done by first using the JSON-LD *expand* function that replaces each JSON name in the  CodeMeta Document with it's corresponding IRI from the CodeMeta context file. For example, the producer's CodeMeta Document may contain the following line:
+As an alternative to using the producer supplied JSON names, the consumer can use the [JSON-LD API](https://www.w3.org/TR/json-ld-api/) to translate the JSON names to their own local JSON names that may be in use by their local processing scripts. This is done by first using the JSON-LD *expand* function that replaces each JSON name in the CodeMeta Document with it's corresponding IRI from the CodeMeta context file. For example, the producer's CodeMeta Document may contain the following line:
 
 ```json
       "codeRepository": "https://github.com/DataONEorg/rdataone"
@@ -59,7 +60,7 @@ Using the JSON-LD API *expand* function, this is converted to:
      "http://schema.org/codeRepository": "https://github.com/DataONEorg/rdataone"
 ```
 
-Next, the consumer can use their own context file that maps from each IRI to their own local JSON names. For example, the consumer may have a context that maps the local JSON name 'repository' (as in `package.json` documents used by NPM, see [/crosswalk/node/]) to "http://schema.org/codeRepository", so using the JSON API *compact* function would result in a new  CodeMeta Document with the entry:
+Next, the consumer can use their own context file that maps from each IRI to their own local JSON names. For example, the consumer may have a context that maps the local JSON name 'repository' (as in `package.json` documents used by NPM, see [/crosswalk/node/]) to "http://schema.org/codeRepository", so using the JSON API *compact* function would result in a new CodeMeta Document with the entry:
 
 ```json
      "repository": "https://github.com/DataONEorg/rdataone"
@@ -84,10 +85,10 @@ Tools will be created that assist in the generation of CodeMeta documents. For e
 
 ## Extending the CodeMeta Context
 
-CodeMeta explicitly defines the terms it uses from <http://schema.org>, rather than merely extending <http://schema.org> with a few additional terms.  To use additional terms from <http://schema.org> not listed on the [terms page](/terms/) (or terms from any other context), you must extend your context appropriately.  For instance, to combine codemeta (v2.0-rc) with all terms available in schema.org, you would do:
+CodeMeta explicitly defines the terms it uses from <http://schema.org>, rather than merely extending <http://schema.org> with a few additional terms.  To use additional terms from <http://schema.org> not listed on the [terms page](/terms/) (or terms from any other context), you must extend your context appropriately.  For instance, to combine CodeMeta (v3.0) with all terms available in schema.org, you would do:
 
 ```json
-"@context": ["https://raw.githubusercontent.com/codemeta/codemeta/2.0-rc/codemeta.jsonld", "http://schema.org/"]
+"@context": ["https://w3id.org/codemeta/3.0", "http://schema.org/"]
 ```
 
 Note the default context should be listed last.  

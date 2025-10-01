@@ -18,5 +18,4 @@ The CodeMeta project also introduces the following additional properties, which 
 
 {{< properties-description matchParentType="codemeta:">}}
 
-
-Please suggest additional terms or adjustments to this representation in the [codemeta issues](https://github.com/codemeta/codemeta/issues)
+Please suggest additional terms or adjustments to this representation in the [CodeMeta issues](https://github.com/codemeta/codemeta/issues).

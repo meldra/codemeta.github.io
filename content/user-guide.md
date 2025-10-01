@@ -1,5 +1,5 @@
 ---
-title: user guide
+title: User guide
 ---
 
 ## Generating a CodeMeta file
@@ -8,18 +8,26 @@ You can use the [codemeta-generator](https://codemeta.github.io/codemeta-generat
 
 ## Creating a CodeMeta instance file manually
 
-A CodeMeta instance file describes the metadata associated with a software object using JSON's linked data (JSON-LD) notation.  A codemeta file can contain any of the properties described on the [CodeMeta terms page](/terms/). Most codemeta files are called `codemeta.json` by convention.
+A CodeMeta instance file describes the metadata associated with a software object using JSON's linked data (JSON-LD) notation.  A CodeMeta file can contain any of the properties described on the [CodeMeta terms page](/terms/). Most CodeMeta files are called `codemeta.json` by convention.
 
-Here is an example of a basic `codemeta.json` that you can put at the root of a GitHub repo ([link to full example](https://github.com/ropensci/codemetar/blob/master/codemeta.json)):
+Here is an example of a basic `codemeta.json` that you can put at the root of a GitHub repo
+([link to full example](https://github.com/gem-pasteur/macsyfinder/blob/master/codemeta.json)):
 
 ```json
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
-    "@type": "SoftwareSourceCode",
-    "name": "CodemetaR",
-    "description": "CodeMeta defines a 'JSON-LD' format for describing software metadata. This package provides utilities to generate, parse, and modify codemeta.jsonld files automatically for R packages.",
-    "license": "https://spdx.org/licenses/GPL-3.0",
-    "identifier": "http://dx.doi.org/10.5281/zenodo.XXXX"
+    "@context": "https://w3id.org/codemeta/3.0",
+    "type": "SoftwareSourceCode",
+    "applicationCategory": "Biology",
+    "codeRepository": "https://github.com/gem-pasteur/macsyfinder",
+    "description": "MacSyFinder is a program to model and detect macromolecular systems, genetic pathways… in prokaryotes protein datasets.",
+    "downloadUrl": "https://pypi.org/project/MacSyFinder/",
+    "license": "https://spdx.org/licenses/GPL-3.0+",
+    "name": "macsyfinder",
+    "version": "2.1.4",
+    "continuousIntegration": "https://github.com/gem-pasteur/macsyfinder/actions",
+    "developmentStatus": "active",
+    "issueTracker": "https://github.com/gem-pasteur/macsyfinder/issues",
+    "referencePublication": "https://doi.org/10.24072/pcjournal.250"
 }
 ```
 
@@ -89,7 +97,7 @@ This should be added at the top level of the document, indicating that this indi
 
 ```json
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@context": "https://w3id.org/codemeta/3.0",
     "@type": "SoftwareSourceCode",
     "name": "CodemetaR",
 
@@ -108,7 +116,7 @@ JSON-LD operations can later *expand* this reference and *embed* the full inform
 
 ```json
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@context": "https://w3id.org/codemeta/3.0",
     "@type": "SoftwareSourceCode",
     "name": "CodemetaR",
 
@@ -135,7 +143,7 @@ We saw before a simple (root) SoftwareSourceCode object:
 
 ```json
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@context": "https://w3id.org/codemeta/3.0",
     "@type": "SoftwareSourceCode",
     "name": "CodemetaR"
 }
@@ -145,7 +153,7 @@ and this root object can refer to other objects, for example recommend a Softwar
 
 ```json
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@context": "https://w3id.org/codemeta/3.0",
     "@type": "SoftwareSourceCode",
     "name": "CodemetaR",
 
@@ -160,7 +168,7 @@ And you may in turn want to add attributes to this application:
 
 ```json
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@context": "https://w3id.org/codemeta/3.0",
     "@type": "SoftwareSourceCode",
     "name": "CodemetaR",
 
@@ -176,13 +184,13 @@ And you may in turn want to add attributes to this application:
 }
 ```
 
-It is important to mind the order of curly brackets (an object begins with a `{` and ends with a matching `}`) and indentation (spaces at the beginning of a line) to reflect the hierarchy: "Central R Archive Network (CRAN)" is the name of the provider of "rmarkdown", which is a softwareSuggestion of CodemetaR.
+It is important to mind the order of curly brackets (an object begins with a `{` and ends with a matching `}`) and indentation (spaces at the beginning of a line) to reflect the hierarchy: "Central R Archive Network (CRAN)" is the name of the provider of "rmarkdown", which is a softwareSuggestions of CodemetaR.
 
 For example, the above code is not equivalent to:
 
 ```json
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@context": "https://w3id.org/codemeta/3.0",
     "@type": "SoftwareSourceCode",
     "name": "CodemetaR",
 
@@ -202,7 +210,7 @@ because in the latter, `"https://cran.r-project.org"` is the `"url"` of `rmarkdo
 
 ## The context
 
-Every CodeMeta document must refer to the context file *codemeta.jsonld*, for example via a URL.  This indicates that all terms in the document should be interpreted in the "context" of CodeMeta.  Most terms are chosen to match the equivalent terms in <http://schema.org>, but CodeMeta provides a few additional terms not found in <http://schema.org> which may be helpful for software projects.  CodeMeta also restricts the context to use only those <https://schema.org> terms that are explicitly listed on the [terms](/terms/) page.  Users wanting to include additional terms must extend the context (see [developer-guide](/developer-guide/)).
+Every CodeMeta document must refer to the context file *codemeta.jsonld*, for example via a URL.  This indicates that all terms in the document should be interpreted in the "context" of CodeMeta.  Most terms are chosen to match the equivalent terms in <http://schema.org>, but CodeMeta provides a few additional terms not found in <http://schema.org> which may be helpful for software projects. CodeMeta also restricts the context to use only those <https://schema.org> terms that are explicitly listed on the [terms](/terms/) page.  Users wanting to include additional terms must extend the context (see [developer-guide](/developer-guide/)).
 
 The context file may be modified and updated in the future, if new JSON properties are added or existing ones modified.
 The CodeMeta GitHub repository defines tags to allow specific versions of a file to be referenced, and assigns
@@ -210,7 +218,7 @@ The CodeMeta GitHub repository defines tags to allow specific versions of a file
 appropriate context file, e.g.
 
 ```json
-"@context": "https://doi.org/10.5063/schema/codemeta-2.0"
+"@context": "https://w3id.org/codemeta/3.0"
 ```
 
 Release candidate versions may be referred to consistently using their [git tag](https://github.com/codemeta/codemeta/tags) for the raw version, e.g. <https://raw.githubusercontent.com/codemeta/codemeta/2.0-rc/codemeta.jsonld>.  *Please do not refer to the raw GitHub URL for the master branch*, as this is subject to change and will not guarantee a stable metadata file.
