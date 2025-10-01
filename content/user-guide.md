@@ -6,11 +6,11 @@ title: user guide
 
 You can use the [codemeta-generator](https://codemeta.github.io/codemeta-generator/) directly at <https://codemeta.github.io/codemeta-generator/>
 
-## Creating A CodeMeta Instance File Manually
+## Creating a CodeMeta instance file manually
 
 A CodeMeta instance file describes the metadata associated with a software object using JSON's linked data (JSON-LD) notation.  A codemeta file can contain any of the properties described on the [CodeMeta terms page](/terms/). Most codemeta files are called `codemeta.json` by convention.
 
-Here is an example of a basic `codemeta.json` that you can put at the root of a Github repo ([link to full example](https://github.com/ropensci/codemetar/blob/master/codemeta.json)):
+Here is an example of a basic `codemeta.json` that you can put at the root of a GitHub repo ([link to full example](https://github.com/ropensci/codemetar/blob/master/codemeta.json)):
 
 ```json
 {
@@ -55,7 +55,7 @@ All fields that accept a value of a given type accept an array of values of this
 
 ```json
 "license": [
-    "https://spdx.org/licenses/GPL-3.0",
+    "https://spdx.org/licenses/GPL-3.0-or-later",
     "https://spdx.org/licenses/BSD-3-Clause"
 ]
 ```
@@ -213,7 +213,7 @@ appropriate context file, e.g.
 "@context": "https://doi.org/10.5063/schema/codemeta-2.0"
 ```
 
-Release candidate versions may be referred to consistently using their git tag for the raw version, e.g. <https://raw.githubusercontent.com/codemeta/codemeta/2.0-rc/codemeta.jsonld>.  *Please do not refer to the raw GitHub URL for the master branch*, as this is subject to change and will not guarantee a stable metadata file.  
+Release candidate versions may be referred to consistently using their [git tag](https://github.com/codemeta/codemeta/tags) for the raw version, e.g. <https://raw.githubusercontent.com/codemeta/codemeta/2.0-rc/codemeta.jsonld>.  *Please do not refer to the raw GitHub URL for the master branch*, as this is subject to change and will not guarantee a stable metadata file.
 
 ## Testing An Instance file
 
