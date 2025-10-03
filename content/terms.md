@@ -13,7 +13,6 @@ Recognized properties for CodeMeta `SoftwareSourceCode` and `SoftwareApplication
 These terms are all recognized properties of <https://schema.org/SoftwareSourceCode> or <https://schema.org/SoftwareApplication> Types.
 
 Note that while most properties take basic data types as values (`Text`, `URL`), several take other node types, such as `Person`, `Organization`, `Review`, or `Role`.
-
 Recommended fields for these node types in CodeMeta documents are given below.
 
 ### Schema.org Thing terms
