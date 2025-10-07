@@ -1,0 +1,8 @@
+This theme is derived from one of the default layouts included in
+[Material-Kit-BS4](https://github.com/creativetimofficial/material-kit-bs4/)
+[adapted for Hugo templating by cboettig](https://github.com/cboettig/hugo-material-theme/)
+and further adapted (colour changes) for CodeMeta by cboettig.
+
+In late 2025, the site was stripped of most of Material-Kit-BS4, the css
+being all that remains. Its Bootstrap and JQuery are now vanilla, and
+drop-in upgradable to later versions.

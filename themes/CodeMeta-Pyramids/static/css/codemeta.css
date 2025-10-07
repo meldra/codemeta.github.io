@@ -1,0 +1,15 @@
+/*!
+
+ =========================================================
+ * CodeMeta css customizations
+ =========================================================
+
+ */
+
+/*!
+ *  Make the header colour change on-scroll smoother
+ */
+#sectionsNav {
+  transition: all 0.25s;
+}
+

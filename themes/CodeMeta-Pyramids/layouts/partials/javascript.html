@@ -1,0 +1,16 @@
+<!-- LaTeX math rendering -->
+{{ if or .Params.math .Site.Params.math }}
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+<script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+{{ end }}
+
+<!--   Core JS Files   -->
+<script src="/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="/js/core/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+<!-- CodeMeta JS -->
+<script src="/js/codemeta.js" type="text/javascript"></script>
+
+{{ range .Site.Params.custom_js }}
+  <script type="text/javascript" src="{{ "/js/" | relURL }}{{ . }}"></script>
+{{ end }}

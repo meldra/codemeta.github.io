@@ -1,0 +1,20 @@
+{{ define "body" }}
+<body class="landing-page sidebar-collapse"> 
+  {{ partial "nav.html" . }}
+  
+  {{ partial "page-header.html" . }}
+  
+  <div class="main main-raised">
+    <div class="section section-basic">
+      <div class="container">
+
+      {{ .Content }}
+      
+      </div>
+    </div>
+  </div>
+  
+  {{ partial "footer" . }}
+ 
+</body>
+{{ end }}
