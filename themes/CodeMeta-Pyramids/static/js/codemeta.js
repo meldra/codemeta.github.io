@@ -8,11 +8,18 @@
 
 const headerEl = document.querySelector('#sectionsNav');
 
-window.addEventListener('scroll', () => {
+function manageNav() {
 	if (window.scrollY > 50) {
 		headerEl.classList.remove('navbar-transparent');
 	} else if (window.scrollY < 50) {
 		headerEl.classList.add('navbar-transparent');
 	}
-	
+}
+
+if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+  manageNav();
+}
+
+window.addEventListener('scroll', () => {
+  manageNav();
 });
