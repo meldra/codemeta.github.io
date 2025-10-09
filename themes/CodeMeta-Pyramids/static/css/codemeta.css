@@ -13,3 +13,10 @@
   transition: all 0.25s;
 }
 
+/*!
+ * overide black border on responsive nav toggler
+ */
+
+.navbar {
+  --bs-navbar-toggler-focus-width: none;
+}
