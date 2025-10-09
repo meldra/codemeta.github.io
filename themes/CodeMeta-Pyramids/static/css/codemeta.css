@@ -6,9 +6,18 @@
 
  */
 
+/*! 
+ * dark mode support for unstyled elements
+ */
+ 
+:root {
+  color-scheme: light dark;
+}
+
 /*!
  *  Make the header colour change on-scroll smoother
  */
+ 
 #sectionsNav {
   transition: all 0.25s;
 }
@@ -20,3 +29,66 @@
 .navbar {
   --bs-navbar-toggler-focus-width: none;
 }
+
+/*!
+ * Dark mode toggler button
+ */
+
+li.dark-light-toggler {
+  height: 50px;
+}
+
+.dark-light-toggler .form-check-label {
+  padding: 0px;
+  margin-top: 10px;
+  margin-left: 25px;
+  font-size: 1.25em;
+}
+
+/*!
+ * These are the base colours which are using the Bootstrap
+ * variables which will work with dark/light mode switching
+ * 
+ * The definitions here are overriding material-kit.css
+ */
+
+body {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+}
+
+.main{
+  background-color: var(--bs-secondary-bg);
+}
+
+[data-bs-theme=light] div.highlight {
+  border: 1px solid var(--bs-dark-border-subtle);
+  padding: 10px 10px 0px 10px;
+}
+
+[data-bs-theme=dark] div.highlight {
+  border: 1px solid var(--bs-body-bg);
+  padding: 10px 10px 0px 10px;
+}
+
+.navbar {
+  background-color: var(--bs-body-bg) !important;
+}
+
+[data-bs-theme=dark] .highlight {
+  background-color: var(--bs-border-color) !important;
+}
+
+[data-bs-theme=dark] .navbar {
+  color: var(--bs-body-color) !important;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-collapse, .navbar-collapse::after {
+    background-color: var(--bs-body-bg) !important;
+  }
+  .nav-open .nav-item a{
+    color: var(--bs-body-color) !important;
+  }
+}
+

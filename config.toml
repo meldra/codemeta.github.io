@@ -51,12 +51,6 @@ publishDir = "../website"
     date_format = "Mon, Jan 2, 2006"
     description = "A Rosetta Stone for Software Metadata"
 
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.10.0"
-    highlightCDN = "//cdn.bootcss.com"
-    highlightjsLang = ["r", "yaml", "json"]
-    highlightjsTheme = "github"
-
     [params.logo]
     url = "logo.png"
     width = 50
@@ -67,3 +61,5 @@ publishDir = "../website"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    style = 'pygments'

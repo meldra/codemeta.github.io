@@ -20,6 +20,15 @@
                title = "{{ .Name }}">{{ .Pre }} {{ .Name }}</a>
           </li>
           {{ end }}
+          <li>
+			<div class="form-check dark-light-toggler">
+				<input class="form-check-input" type="checkbox" id="darkModeSwitch">
+				<label class="form-check-label" for="darkModeSwitch">
+					<i role="presentation" class='bi bi-sun-fill d-none' id='light-mode-bi' title="Light mode"></i>
+					<i role="presentation" class='bi bi-moon-stars-fill' id='dark-mode-bi' title="Dark mode"></i>
+				</label>
+			</div>
+          </li>
         </ul>
       </div>
     </div>
