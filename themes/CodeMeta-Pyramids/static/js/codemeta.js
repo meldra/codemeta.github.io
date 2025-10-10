@@ -32,27 +32,68 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const switchEl = document.getElementById('darkModeSwitch');
     const darkEl = document.getElementById('dark-mode-bi');
     const lightEl = document.getElementById('light-mode-bi');
+    
+    function setIcon(mode) {
+		if (mode == 'dark' && darkEl.classList.contains('d-none')) {
+			lightEl.classList.add('d-none');
+			darkEl.classList.remove('d-none');
+		} else if (mode == 'light' && lightEl.classList.contains('d-none')) {
+			darkEl.classList.add('d-none');
+			lightEl.classList.remove('d-none');
+		}
+	}
+	
+	function toggleIcon(mode) {
+		if (mode == 'dark') {
+			setIcon('light');
+		} else if (mode == 'light') {
+			setIcon('dark');
+		}
+	}
 
+	function switchMode(mode, bsTheme) {
+		if (mode == true) {
+			htmlEl.setAttribute('data-bs-theme', 'dark');
+			if (bsTheme == true) {
+				localStorage.setItem('bsTheme', 'dark');
+			}
+			toggleIcon('dark');
+		} else {
+			htmlEl.setAttribute('data-bs-theme', 'light');
+			if (bsTheme == true) {
+				localStorage.setItem('bsTheme', 'light');
+			}
+			toggleIcon('light');
+		}
+	}
+    const currentTheme = localStorage.getItem('bsTheme') || null;
+    
+    // Set the theme by OS preferences
+	if (window.matchMedia) {
+		var osMode = window.matchMedia('(prefers-color-scheme: dark)')
+		if (currentTheme == null) {
+			switchEl.setAttribute('checked', osMode.matches);
+			switchMode(osMode.matches, false);
+		}
+		osMode.addEventListener('change', e => {
+			if (currentTheme == null) {
+				switchEl.setAttribute('checked', osMode.matches);
+				switchMode(osMode.matches, false);
+			}
+		})
+		
+	}
     // Set the default theme to light if no setting is found in local storage
-    const currentTheme = localStorage.getItem('bsTheme') || 'light';
-    htmlEl.setAttribute('data-bs-theme', currentTheme);
-    switchEl.checked = currentTheme === 'light';
+
+    toggleIcon(currentTheme);
 
     switchEl.addEventListener('change', function () {
         if (this.checked) {
-            htmlEl.setAttribute('data-bs-theme', 'light');
-            localStorage.setItem('bsTheme', 'light');
-            if (darkEl.classList.contains('d-none')) {
-				lightEl.classList.add('d-none');
-				darkEl.classList.remove('d-none');
-			}
+            switchMode(false, true);
+            setIcon('dark');
         } else {
-            htmlEl.setAttribute('data-bs-theme', 'dark');
-            localStorage.setItem('bsTheme', 'dark');
-            if (lightEl.classList.contains('d-none')) {
-				darkEl.classList.add('d-none');
-				lightEl.classList.remove('d-none');
-			}
+            switchMode(true, true);
+            setIcon('light');
         }
     });
 });
