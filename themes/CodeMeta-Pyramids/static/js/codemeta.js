@@ -46,54 +46,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	function toggleIcon(mode) {
 		if (mode == 'dark') {
 			setIcon('light');
-		} else if (mode == 'light') {
+		} else {
 			setIcon('dark');
 		}
 	}
 
 	function switchMode(mode, bsTheme) {
-		if (mode == true) {
+		if ((mode == true || mode == "dark") && htmlEl.getAttribute('data-bs-theme') != 'dark') {
 			htmlEl.setAttribute('data-bs-theme', 'dark');
+			toggleIcon('dark');
 			if (bsTheme == true) {
 				localStorage.setItem('bsTheme', 'dark');
 			}
-			toggleIcon('dark');
 		} else {
 			htmlEl.setAttribute('data-bs-theme', 'light');
+			toggleIcon('light');
 			if (bsTheme == true) {
 				localStorage.setItem('bsTheme', 'light');
 			}
-			toggleIcon('light');
 		}
 	}
-    const currentTheme = localStorage.getItem('bsTheme') || null;
+    const currentTheme = localStorage.getItem('bsTheme');
     
     // Set the theme by OS preferences
-	if (window.matchMedia) {
-		var osMode = window.matchMedia('(prefers-color-scheme: dark)')
-		if (currentTheme == null) {
-			switchEl.setAttribute('checked', osMode.matches);
-			switchMode(osMode.matches, false);
-		}
-		osMode.addEventListener('change', e => {
-			if (currentTheme == null) {
+  	if (currentTheme == null) {
+		if (window.matchMedia) {
+			 osMode = window.matchMedia('(prefers-color-scheme: dark)')
 				switchEl.setAttribute('checked', osMode.matches);
 				switchMode(osMode.matches, false);
-			}
-		})
-		
+			osMode.addEventListener('change', e => {
+				switchEl.setAttribute('checked', osMode.matches);
+				switchMode(osMode.matches, false);
+			})
+		}
+	// Graceful override
+	} else {
+		switchMode(currentTheme, false)
 	}
+	
     // Set the default theme to light if no setting is found in local storage
-
-    toggleIcon(currentTheme);
-
     switchEl.addEventListener('change', function () {
-        if (this.checked) {
-            switchMode(false, true);
-            setIcon('dark');
-        } else {
-            switchMode(true, true);
-            setIcon('light');
-        }
+		switchMode(this.checked, true);
     });
 });
