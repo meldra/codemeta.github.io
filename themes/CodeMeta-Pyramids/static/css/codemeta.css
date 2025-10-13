@@ -61,9 +61,17 @@ body {
   background-color: var(--bs-secondary-bg);
 }
 
-[data-bs-theme=light] div.highlight {
+.navbar {
+  background-color: var(--bs-body-bg) !important;
+}
+
+div.highlight {
   border: 1px solid var(--bs-dark-border-subtle);
   padding: 10px 10px 0px 10px;
+}
+
+.highlight {
+  background-color: var(--bs-dark-bg-subtle);
 }
 
 [data-bs-theme=dark] div.highlight {
@@ -71,12 +79,13 @@ body {
   padding: 10px 10px 0px 10px;
 }
 
-.navbar {
-  background-color: var(--bs-body-bg) !important;
+[data-bs-theme=dark] .highlight {
+  background-color: var(--bs-tertiary-bg) !important;
+  color: var(--bs-body-color);
 }
 
-[data-bs-theme=dark] .highlight {
-  background-color: var(--bs-border-color) !important;
+[data-bs-theme=dark] pre code {
+  color: var(--bs-body-color);
 }
 
 [data-bs-theme=dark] .navbar {
