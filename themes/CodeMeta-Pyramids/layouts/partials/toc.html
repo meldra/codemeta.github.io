@@ -1,0 +1,12 @@
+<!-- ToC code based on https://northcoder.com/post/customizing-hugo-tables-of-contents/ -->
+
+<div id="toc">
+    <h4 class="ps-2 py-3">Table of Contents</h4>
+    {{ with .Fragments }}
+    {{ partial "toc_level" . }}
+    {{ end }}
+</div>
+                    
+
+
+
