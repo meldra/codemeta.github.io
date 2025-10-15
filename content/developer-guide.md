@@ -1,5 +1,6 @@
 ---
 title: CodeMeta Developer Guide
+layout: sidenav
 ---
 
 This guide is intended for software developers who require detailed information about the CodeMeta project's

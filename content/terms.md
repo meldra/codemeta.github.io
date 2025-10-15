@@ -1,5 +1,6 @@
 ---
 title: CodeMeta Terms
+layout: sidenav
 ---
 
 ## Terms from Schema.org
