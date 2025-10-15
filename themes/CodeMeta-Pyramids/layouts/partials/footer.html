@@ -28,6 +28,11 @@
         </li>
         {{ end }}
       {{ end }}
+      {{ with .OutputFormats.Get "RSS" }}
+      <li>
+          <a href="{{ .RelPermalink }}" aria-label="RSS feed for {{ page.Title }}"><i class="bi bi-rss"></i> RSS</a>
+      </li>
+      {{ end }}
       </ul>
     </nav>
 	  <div class="copyright pull-right">

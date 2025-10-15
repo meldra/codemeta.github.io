@@ -31,7 +31,7 @@
   {{ range .Site.Params.custom_css }}
   <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
   {{ end }}
-  {{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}
+
   <link rel="canonical" href="{{ .Permalink }}">
 
 </head>
