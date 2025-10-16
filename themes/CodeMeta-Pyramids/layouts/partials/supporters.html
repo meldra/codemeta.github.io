@@ -1,0 +1,11 @@
+             
+			<div class="row justify-content-center">
+			{{ range sort .Site.Data.supporters "name" }}
+			<div class="card col-3 m-1 pt-3 supporter-card">
+			  <a class="h-100" href="{{ .url }}"><img class="card-img-top" aria-label="Logo of {{ .name }}" src="{{ .logo }}" alt="{{ .name }}"></a>
+			  <div class="card-footer d-none d-md-block text-center">
+				<p class="lead"><a class="fw-bold w-100" href="{{ .url }}">{{ .name }}</a></p>
+			  </div>
+			</div>
+			{{ end }}</div>
+

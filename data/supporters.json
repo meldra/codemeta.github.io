@@ -1,0 +1,27 @@
+[
+  {
+    "name": "National Science Foundation",
+    "logo": "/img/nsf.jpg",
+    "url": "https://www.nsf.gov"
+  },
+  {
+    "name": "DataCite",
+    "logo": "/img/datacite.png",
+    "url": "https://datacite.org"
+  },
+  {
+    "name": "GitHub",
+    "logo": "/img/github.png",
+    "url": "https://github.com"
+  },
+  {
+    "name": "figshare",
+    "logo": "/img/figshare.png",
+    "url": "https://figshare.com"
+  },
+  {
+    "name": "Zenodo",
+    "logo": "/img/zenodo.jpg",
+    "url": "https://zenodo.org"
+  }
+]

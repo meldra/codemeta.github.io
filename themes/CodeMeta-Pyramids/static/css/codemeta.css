@@ -102,6 +102,25 @@ div.highlight {
 }
 
 /*!
+ * Card theming
+ */
+
+.card {
+  background-color: var(--bs-dark-bg-subtle);
+}
+
+[data-bs-theme=dark] .card {
+  background-color: var(--bs-border-color) !important;
+  color: var(--bs-body-color);
+}
+
+.supporter-card a {
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+}
+
+/*!
  * ToC theming
  */
 
