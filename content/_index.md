@@ -1,5 +1,6 @@
 ---
 title: "The CodeMeta Project"
+layout: landing
 ---
 
 ## Motivation
@@ -13,11 +14,3 @@ What metadata you want from software is determined by your use case.  If your pr
 Different software repositories, software languages and scientific domains denote this information in different ways, which makes it difficult or impossible for tools to work across these different sources without losing valuable information along the way.  For instance, a fantastic collaboration between GitHub and figshare provides researchers a way to import software on the former into the persistent archive of the latter, getting a permanent identifier, a DOI in the process.  To assign a DOI, figshare must then pass metadata about the object to DataCite, the central DOI provider for all repositories.  While this makes DataCite a powerful aggregator, the lack of a crosswalk table means that much valuable metadata is currently lost along the way, such as the original software license, platform, and so forth. Any tool or approach working across software repositories faces similar challenges without a crosswalk table to translate between these.
 
 For more detail, [visit the project on GitHub](https://github.com/codemeta/codemeta) or check back here soon.
-
-## Special thanks to our supporters
-
-<img width="50px"  src="/img/nsf.jpg"/>
-<img width="50px"  src="/img/datacite.png"/>
-<img width="50px" src="/img/github.png"/>
-<img width="50px"  src="/img/figshare.png"/> 
-<img width="50px"  src="/img/zenodo.jpg"/>
