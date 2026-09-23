@@ -28,8 +28,8 @@
     <td><a href="{{ .url }}">{{ .name }}</a></td>
     <td>{{ .language }}</td>
     <td>{{ $icnt := sub (.maintainers | len) 1 }}{{- range $i, $mtnrs := .maintainers }}{{ $mtnr := index $mtnrs }}{{ if $mtnr.url }}<a href="{{ $mtnr.url }}">{{ $mtnr.name }}</a>{{ else }}{{ $mtnr.name }}{{ end }}{{ if lt $i $icnt }},{{end}}<br>{{ end -}}</td>
-    <td>{{ if in .versions $latest | not }} ⚠️ {{ end }}
-    {{ delimit .versions  ", " }}</td>
+    <td>{{ if in .versions $latest }} ⭐ {{ end }}
+    {{ delimit (.versions | sort | collections.Reverse)  ", " }}</td>
     <td>{{ .description }}</td>
   </tr>
     {{ end -}}
