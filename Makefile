@@ -25,5 +25,5 @@ data/properties_description/v3.0.csv:
 data/properties_description/v%.csv:
 	wget https://github.com/codemeta/codemeta/raw/$*/properties_description.csv -O $@
 
-data/properties_description.json: scripts/properties_to_json.py data/properties_description/v2.0.csv data/properties_description/v3.0.csv
+data/properties_description.json: scripts/properties_to_json.py data/properties_description/v2.0.csv data/properties_description/v3.0.csv data/properties_description/v4.0.csv
 	python3 scripts/properties_to_json.py
